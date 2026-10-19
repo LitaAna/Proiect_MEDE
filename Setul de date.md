@@ -1,5 +1,3 @@
----
-
 # CP1 — Alinierea datelor RNMCA și Open-Meteo
 
 ## 1. Scopul alinierii
@@ -41,7 +39,7 @@ Pentru RNMCA, convenția de reprezentare a orelor `01–24` a fost tratată în 
 
 ## 4. Structura setului de date final
 
-Fișierul rezultat este `B12_date_aliniate.csv`.
+Fișierul rezultat este **[B12_date_aliniate.csv](B12_date_aliniate.csv)**.
 
 | Variabilă | Descriere | Unitate |
 |---|---|---|
@@ -66,13 +64,34 @@ După preprocesare și aliniere, au fost obținute următoarele rezultate:
 | Zile cu observații PM2.5 incomplete | 24 |
 | Valori orare PM2.5 lipsă | 65 |
 
-**Interpretare:**
+### Interpretarea rezultatelor
 
 Toate cele 364 de zile aliniate au valori disponibile pentru PM2.5, temperatură și viteza vântului.
 
 Totuși, pentru 24 de zile, media zilnică PM2.5 a fost calculată din mai puțin de 24 de măsurători orare valide. Aceste zile au fost păstrate în tabelul general, iar numărul observațiilor valide este documentat pentru a permite evaluarea calității mediilor zilnice.
 
-Fișierul `coverage_report.csv` conține raportul de acoperire.
+Raportul de acoperire este utilizat pentru evaluarea completitudinii datelor și pentru identificarea zilelor cu observații incomplete.
+
+## 6. Fișierele rezultate și accesul la date
+
+În urma procesului de aliniere au fost obținute două fișiere CSV, disponibile în acest repository.
+
+| Fișier | Descriere | Acces |
+|---|---|---|
+| `B12_date_aliniate.csv` | Setul de date zilnic, cu PM2.5, temperatură și viteza vântului | [Vizualizare / descărcare](B12_date_aliniate.csv) |
+| `B12_date_valide.csv` | Setul de date cu valori disponibile pentru toate variabilele analizate | [Vizualizare / descărcare](B12_date_valide.csv) |
+
+### Descrierea fișierelor
+
+**B12_date_aliniate.csv**
+
+Conține rezultatul alinierii datelor RNMCA și Open-Meteo la nivel zilnic, inclusiv numărul măsurătorilor PM2.5 valide pentru fiecare zi.
+
+**B12_date_valide.csv**
+
+Conține observațiile zilnice pentru care sunt disponibile toate cele trei variabile principale: PM2.5, temperatură și viteza vântului.
+
+Fișierele pot fi deschise direct pe GitHub sau descărcate pentru analiză în Python, Excel ori alte aplicații de prelucrare a datelor.
 
 ## 7. Limitări
 
@@ -82,3 +101,11 @@ Fișierul `coverage_report.csv` conține raportul de acoperire.
 - Unele medii zilnice PM2.5 sunt calculate din mai puțin de 24 de observații valide.
 - Convenția temporală RNMCA trebuie confirmată pentru validarea completă a alinierii.
 - Alinierea temporală permite explorarea relațiilor dintre variabile, dar nu demonstrează o relație cauzală.
+
+## 8. Concluzia etapei CP1
+
+În această etapă au fost integrate două surse de date independente, RNMCA și Open-Meteo, într-un set de date comun la nivel zilnic.
+
+Au fost obținute **364 de observații zilnice aliniate**, dintre care **340 de zile au câte 24 de valori PM2.5 valide**.
+
+Setul de date rezultat reprezintă baza pentru etapele următoare ale proiectului, în care vor fi realizate vizualizări, analize exploratorii și interpretări ale relației dintre concentrația PM2.5 și condițiile meteorologice din București.
