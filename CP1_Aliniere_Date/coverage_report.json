@@ -1,0 +1,31 @@
+{
+  "method": "RNMCA 01–24 assigned to printed local calendar day; Open-Meteo GMT/UTC converted to Europe/Bucharest including DST; daily means over available hourly values",
+  "rnmca": {
+    "total_hourly_records": 8724,
+    "pm25_missing_or_invalid": 65,
+    "duplicate_hourly_records": 0,
+    "first_date": "2025-10-13",
+    "last_date": "2026-10-11"
+  },
+  "open_meteo": {
+    "total_hourly_records": 8736,
+    "temperature_missing": 0,
+    "wind_missing": 0,
+    "first_local_date": "2025-10-13",
+    "last_local_date": "2026-10-12"
+  },
+  "calendar_days_rnmca": 364,
+  "days_with_all_three_variables": 364,
+  "days_without_pm25": 0,
+  "days_without_temperature": 0,
+  "days_without_wind": 0,
+  "days_with_24_valid_pm25_hours": 340,
+  "days_with_fewer_than_24_valid_pm25_hours": 24,
+  "days_with_all_variables_and_24_pm25_hours": 340,
+  "notes": [
+    "RNMCA 01–24 hour-label interpretation should be checked against portal metadata.",
+    "Open-Meteo data use GMT/UTC; local conversion causes partial boundary days and 23/25-hour DST days.",
+    "Means are calculated for any day with at least one valid hourly observation; use valid-hour columns to impose a stricter completeness threshold.",
+    "Meteorological coordinates represent a model location, not necessarily the exact B-12 station."
+  ]
+}
