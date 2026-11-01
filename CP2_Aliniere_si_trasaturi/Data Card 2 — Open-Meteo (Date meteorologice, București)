@@ -1,0 +1,62 @@
+
+# Data Card 2 — Open-Meteo (Date meteorologice, București)
+
+## 1. Proveniența datelor
+
+- **Sursă:** Open-Meteo, date meteorologice istorice
+- **Portal oficial:** https://open-meteo.com/en/docs/historical-weather-api
+- **Fișier descărcat:** `meteo_13.10.2025_01.11.2026(1).csv`
+- **Format:** CSV
+- **Metoda de obținere:** export din serviciul Open-Meteo
+- **Tipul datelor:** variabile meteorologice orare modelate, nu observații ale stațiilor RNMCA
+
+## 2. Perioada și rezoluția datelor
+
+| **Caracteristică** | **Valoare** |
+| --- | --- |
+| Perioada nominală | 13.10.2025 – 01.11.2026 |
+| Număr de înregistrări | 9.240 ore în fișier |
+| Rezoluție temporală originală | Orară |
+| Fus orar original | GMT / UTC (`utc_offset_seconds = 0`) |
+| Fus orar folosit la aliniere | `Europe/Bucharest` |
+| Rezoluție spațială | Un punct meteorologic modelat, nu câte un punct pentru fiecare stație |
+| Coordonate din antetul CSV | 44,46397° N; 26,088955° E |
+| Altitudine din antetul CSV | 93 m |
+| Unitate de observație CP1 | Punct meteo × oră |
+
+Orele sunt convertite din UTC în ora locală; la schimbarea orei de iarnă pot exista două ore UTC cu aceeași etichetă locală.
+
+## 3. Variabile și unități
+
+| **Variabilă** | **Descriere** | **Unitate** |
+| --- | --- | --- |
+| time | Momentul observației în export | ISO 8601 / GMT |
+| temperature_2m | Temperatura aerului la 2 m | °C |
+| wind_speed_10m | Viteza vântului la 10 m | km/h |
+| latitude / longitude | Coordonatele punctului meteo din antet | grade zecimale |
+
+Variabilele utilizate în proiect sunt **temperatura** și **viteza vântului**.
+
+## 4. Calitatea datelor și goluri
+
+- **Număr de ore sursă:** 9.240.
+- **Tratament valori lipsă:** păstrare ca `NaN`, fără interpolare sau înlocuire cu zero.
+- **Verificări:** parsarea datelor, conversia fusului orar, valori numerice și unicitatea cheilor temporale.
+- **Ore locale duplicate la trecerea la ora de iarnă:** 2 în seria meteorologică; acestea nu se asociază arbitrar cu RNMCA.
+- **Rânduri RNMCA cu oră meteo ambiguă:** 8 (patru stații × două etichete implicate în raportul de validare).
+- **Atenție la proveniență:** seria a fost completată anterior pentru 01.11.2026 dintr-un export cu coordonate diferite; antetul final nu poate certifica coordonatele fiecărui rând. Acea zi necesită verificare sau reexport omogen.
+
+## 5. Licență și condiții de utilizare
+
+- **Furnizor:** Open-Meteo.
+- **Documentație și termeni:** https://open-meteo.com/en/terms ; https://open-meteo.com/en/docs/historical-weather-api
+- **Licență:** condițiile exacte aplicabile exportului, sursei meteorologice subiacente și modului de utilizare trebuie verificate în documentația oficială. Nu se atribuie aici o licență neverificată.
+- **Utilizare:** academică, cu menționarea Open-Meteo și a eventualelor cerințe de atribuire.
+
+## 6. Limitări
+
+- Datele meteorologice reprezintă un singur punct spațial, comun celor patru stații RNMCA.
+- Nu sunt măsurători meteorologice efectuate la fiecare stație de calitate a aerului.
+- Coordonatele ultimei zile pot diferi de restul seriei; este necesară verificarea sursei.
+- Orele locale repetate la schimbarea orei necesită tratare explicită.
+- Corelațiile cu PM2.5 nu implică relații cauzale.
