@@ -1,0 +1,32 @@
+{
+  "fisier_rnmca": "B12_B14_B21_B26.xls",
+  "fisier_meteo": "meteo_13.10.2025_01.11.2026.csv",
+  "inregistrari_rnmca": 36868,
+  "inregistrari_meteo": 9240,
+  "pm25_lipsa_pe_statie": {
+    "B-12": 66,
+    "B-14": 27,
+    "B-21": 1,
+    "B-26": 31
+  },
+  "randuri_aliniate": 36868,
+  "status_aliniere": {
+    "aliniat": 36844,
+    "meteo_lipsa": 16,
+    "ambiguu_DST": 8
+  },
+  "metadata_meteo": {
+    "latitude": "44.46397",
+    "longitude": "26.088955",
+    "elevation": "93.0",
+    "utc_offset_seconds": "0",
+    "timezone": "GMT",
+    "timezone_abbreviation": "GMT"
+  },
+  "avertismente": [
+    "Orele RNMCA 01-24 sunt interpretate provizoriu ca 00-23.",
+    "Orele ambigue DST nu sunt aliniate automat.",
+    "Verificati coordonatele meteo pentru 01.11.2026.",
+    "Valorile lipsa nu au fost interpolate."
+  ]
+}
