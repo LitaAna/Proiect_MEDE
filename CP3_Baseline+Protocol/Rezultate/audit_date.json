@@ -1,0 +1,51 @@
+{
+  "randuri_initiale": 6148,
+  "status": {
+    "Complet": 6067,
+    "Incomplet": 81
+  },
+  "lipsa_initial": {
+    "Statie": 0,
+    "Data": 0,
+    "Interval 6h": 0,
+    "Anotimp": 0,
+    "RNMCA | PM2.5 mediu (µg/m³)": 6,
+    "RNMCA | n PM2.5": 0,
+    "Open-Meteo | Temperatura medie (°C)": 0,
+    "Open-Meteo | n temperatura": 0,
+    "Open-Meteo | Vant mediu (km/h)": 0,
+    "Open-Meteo | n vant": 0,
+    "n ore RNMCA": 0,
+    "Status interval": 0
+  },
+  "complete_cu_valori_nefinite": 0,
+  "n_folosit": 6067,
+  "inceput": "2025-10-13",
+  "sfarsit": "2026-10-31",
+  "prag_temporal": "2026-04-23",
+  "coloane_tipuri": {
+    "Statie": "object",
+    "Data": "object",
+    "Interval 6h": "object",
+    "Anotimp": "object",
+    "RNMCA | PM2.5 mediu (µg/m³)": "float64",
+    "RNMCA | n PM2.5": "int64",
+    "Open-Meteo | Temperatura medie (°C)": "float64",
+    "Open-Meteo | n temperatura": "int64",
+    "Open-Meteo | Vant mediu (km/h)": "float64",
+    "Open-Meteo | n vant": "int64",
+    "n ore RNMCA": "int64",
+    "Status interval": "object"
+  },
+  "versiuni": {
+    "pandas": "2.2.2",
+    "openpyxl": "3.1.5",
+    "numpy": "2.2.6",
+    "scipy": "1.14.0",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.9.3",
+    "umap-learn": "0.6.0",
+    "numba": "0.68.1",
+    "llvmlite": "0.50.0"
+  }
+}
