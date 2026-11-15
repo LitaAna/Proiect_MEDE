@@ -62,4 +62,4 @@ Rezultatele sunt salvate automat în `CP3_rezultate`.
 
 Analiza este exploratorie, fără evaluare predictivă pe un set de test. Trustworthiness măsoară păstrarea vecinătăților, nu acuratețea predicției poluării. Pentru unele ajustări Open-Meteo, UMAP a trecut automat de la inițializare spectrală la inițializare aleatoare.
 
-Repository: https://github.com/LitaAna/Proiect_MEDE
+
