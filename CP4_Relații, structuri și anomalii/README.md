@@ -1,7 +1,5 @@
 ﻿# CP4 — Grupări și anomalii în datele PM2.5 din București
 
-MEDE · U12 · Liță Ana-Maria-Larisa
-
 ## Scop
 
 Identificarea grupărilor și observațiilor neobișnuite în reprezentările PCA și UMAP, cu evaluare prin silhouette și stabilitate bootstrap. Comparația include RNMCA separat, Open-Meteo separat și datele combinate.
@@ -21,7 +19,6 @@ Codul este independent: are nevoie doar de matrice și bibliotecile din `require
 
 ## Protocol
 
-- Observații complete și valori finite; fără imputare; aceleași rânduri pentru toate sursele.
 - StandardScaler, PCA și UMAP, cu configurația CP3. Dimensiuni 1→1, 2→2, 3→2; numai setul combinat are reducere efectivă. UMAP: n_neighbors=15, min_dist=0.1, metrică euclidiană, compatibility_layout=True.
 - K-means: seed 42, n_init=10; k ales dintre 2–6 prin silhouette, cu grupuri de minimum 1% din observații. Silhouette pe aceiași 1.000 de indici (RNG 42), atât în reprezentare, cât și în spațiul original comun cu trei variabile standardizate. Scorurile din spații diferite nu sunt direct comparabile.
 - Stabilitate: 100 repetări bootstrap pe blocuri de 7 zile calendaristice, toate stațiile și intervalele unei zile împreună. Se reajustează K-means și se calculează ARI pe zilele neextrase (out-of-bag). **Reprezentarea, scalarea și k rămân fixe:** stabilitate condiționată a clusteringului, nu a întregii analize.
@@ -48,8 +45,4 @@ Pe datele combinate sunt selectate trei grupuri. Gruparea UMAP are ARI față de
 
 K-means impune partiții compacte chiar pe distribuții continue. UMAP poate modifica geometria și densitățile; unele inițializări spectrale Open-Meteo folosesc fallback aleatoriu, semnalat în consolă. Observațiile atipice nu sunt automat erori sau depășiri legale. Selectarea k este exploratorie; nu există validare externă sau concluzii cauzale.
 
-## Varianta detaliată, opțională
 
-`CP4_analiza_detaliata.py`, `README_detaliat.md` și `CP4_rezultate_detaliate/` păstrează analiza extinsă. Nu sunt necesare pentru rularea sau predarea variantei principale. Nu trebuie încărcate cache-urile Python/Numba.
-
-Repository: https://github.com/LitaAna/Proiect_MEDE
